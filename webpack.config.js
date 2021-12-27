@@ -41,14 +41,14 @@ module.exports = {
     //   //   else
     //   //     filePath = resource.context.split("/");
 
-    //   //   if (!filePath.includes("eeDraw")) {
+    //   //   if (!filePath.includes("extendedProject")) {
     //   //     // console.log(resource);
-    //   //     // console.log('not eeDraw Folder');
-    //   //     // return "./eeDraw/constants.ts";
+    //   //     // console.log('not extendedProject Folder');
+    //   //     // return "./extendedProject/foo.ts";
     //   //     // return resource;
     //   //   }
 
-    //   //   // console.log('eeDraw Folder');
+    //   //   // console.log('extendedProject Folder');
     //   //   return resource;
     //   // }
     ),
