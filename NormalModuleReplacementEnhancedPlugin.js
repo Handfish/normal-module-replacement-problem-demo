@@ -36,8 +36,8 @@ class NormalModuleReplacementEnhancedPlugin {
           // console.log(result);
 
           if(result.contextInfo && result.contextInfo.issuer && result.contextInfo.issuer.split('/').includes('extendedProject')) {
-            console.log('extendedProject match');
-            console.log(result);
+            // console.log('extendedProject match');
+            // console.log(result);
             // return result;
             return;
           }
@@ -50,6 +50,12 @@ class NormalModuleReplacementEnhancedPlugin {
             }
           }
         });
+
+        nmf.hooks.resolve.tap("NormalModuleReplacementPlugin", result => {
+          console.log(result);
+        });
+
+
         nmf.hooks.afterResolve.tap("NormalModuleReplacementPlugin", result => {
           const createData = result.createData;
           if (resourceRegExp.test(createData.resource)) {

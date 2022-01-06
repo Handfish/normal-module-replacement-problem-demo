@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const NormalModuleReplacementEnhancedPlugin = require("./NormalModuleReplacementEnhancedPlugin");
+const MyResolverPlugin = require("./MyResolverPlugin");
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -15,6 +16,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+    plugins: [
+      // new MyResolverPlugin("beforeResolve", "resolve"),
+      new MyResolverPlugin("raw-module", "module")
+    ]
   },
   output: {
     path: path.resolve(__dirname, './dist'),
